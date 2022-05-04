@@ -1,9 +1,9 @@
 import React from "react";
 
-function Search() {
+function Search({searchValue, onSearch}) {
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("submitted");
+    console.log(searchValue);
   }
 
   return (
@@ -12,8 +12,8 @@ function Search() {
         type="text"
         id="search"
         placeholder="search free stuff"
-        value={""}
-        onChange={(e) => console.log(e.target.value)}
+        value={searchValue}
+        onChange={onSearch}
       />
       <button type="submit">🔍</button>
     </form>
